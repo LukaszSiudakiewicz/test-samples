@@ -9,7 +9,7 @@ class BitbarTestRunner:
         self.variables = {"BITBAR_APIKEY": "",
                           "BITBAR_SCREENSHOTS": "",
                           "BITBAR_APP": "",
-                          "BITBAR_DEVICE": ""}
+                          "BITBAR_DEVICE": "iPad LS"}
         self.available_tests = ['bitbar_chrome', 'bitbar_android',
                                 'bitbar_safari', 'bitbar_ios',
                                 'bitbar_biometrics_ios', 'bitbar_biometrics_android']

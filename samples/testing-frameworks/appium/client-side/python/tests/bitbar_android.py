@@ -34,62 +34,12 @@ class BitbarAndroid(BaseTest):
         self.utils.log("  " + str(self.driver.get_window_size()))
 
         self.utils.screenshot("app_launch")
-        self.utils.log("  Typing in name")
-        elems = self.driver.find_elements(By.CLASS_NAME, "android.widget.EditText")
-        self.utils.log("  info: EditText:" + str(len(elems)))
-        self.utils.log("  Filling in name")
-        elems[0].send_keys("Bitbar User")
-        sleep(2)
-        self.utils.screenshot("name_typed")
 
-        self.driver.orientation = "LANDSCAPE"
-        self.utils.screenshot("landscape")
-        self.driver.orientation = "PORTRAIT"
-        self.utils.screenshot("portrait")
-
-        try:
-            self.utils.log("  Hiding keyboard")
-            self.driver.hide_keyboard()
-        except WebDriverException:
-            pass  # pass exception, if keyboard isn't visible already
-        self.utils.screenshot("name_typed_keyboard_hidden")
-
-        self.utils.log("  Clicking element 'Buy 101 devices'")
-        elem = self.driver.find_element(
-            AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Buy 101 devices")'
-        )
-        elem.click()
-
-        self.utils.screenshot("clicked_button1")
-
-        self.utils.log("  Clicking Answer")
-        elem = self.driver.find_element(
-            AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Answer")'
-        )
-        elem.click()
-
-        self.utils.screenshot("answer")
-
-        self.utils.log("  Navigating back to Activity-1")
-        self.driver.back()
-        self.utils.screenshot("main_activity")
-
-        self.utils.log("  Clicking element 'Use Testdroid Cloud'")
-        elem = self.driver.find_element(
-            AppiumBy.ANDROID_UIAUTOMATOR,
-            'new UiSelector().text("Use Testdroid Cloud")',
-        )
-        elem.click()
-
-        self.utils.screenshot("clicked_button2")
-
-        self.utils.log("  Clicking Answer")
-        elem = self.driver.find_element(
-            AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Answer")'
-        )
-        elem.click()
-
-        self.utils.screenshot("answer")
+        self.utils.log("  sleep 300")
+        sleep(200)
+        self.utils.screenshot("not")
+        sleep(40)
+        self.utils.screenshot("possible")
 
 
 def initialize():
